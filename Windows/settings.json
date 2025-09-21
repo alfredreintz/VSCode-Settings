@@ -1,0 +1,142 @@
+{
+  // ------------------------------
+  // Tema & editor-inställningar
+  // ------------------------------
+
+  "workbench.colorTheme": "Atom One Dark", // VS Code tema (uppdaterad från Default Dark+)
+  "security.workspace.trust.untrustedFiles": "open", // Öppna osäkra filer utan att fråga
+  "editor.unicodeHighlight.nonBasicASCII": false, // Markera inte ovanliga Unicode-tecken
+  "explorer.confirmDelete": false, // Fråga inte om bekräftelse när filer tas bort
+  "git.autofetch": true, // Hämta nya commits automatiskt
+  "git.confirmSync": false, // Fråga inte om bekräftelse vid git sync (ny)
+  "git.enableSmartCommit": true, // Tillåt commit utan staging först
+  "explorer.confirmDragAndDrop": false, // Ingen bekräftelse vid dra/släpp av filer
+  "editor.fontSize": 16, // Ändrar teckenstorleken i editorn (ny)
+
+  // ------------------------------
+  // Språk-specifika inställningar
+  // ------------------------------
+
+  "[python]": {
+    "editor.formatOnType": true // Autoformatera Python-kod vid typing (t.ex. Enter)
+  },
+  "editor.formatOnSave": true, // Formatera kod varje gång man sparar
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // Använd Prettier för TSX
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // Använd Prettier för JSON/JSONC
+  },
+  "[svelte]": {
+    "editor.tabSize": 2 // Använd 2 mellanslag för indentering i Svelte
+  },
+
+  // ------------------------------
+  // Editor UI
+  // ------------------------------
+
+  "workbench.editor.empty.hint": "hidden", // Visa inte hint när editor är tom
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell", // Standard-terminal i Windows
+  "svelte.enable-ts-plugin": true, // Aktivera TypeScript-plugin i Svelte
+  "github.copilot.enable": { // Stänger av GitHub Copilot för det mesta
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+
+  // ------------------------------
+  // Terminal-profiler
+  // ------------------------------
+
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Windows PowerShell": {
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  },
+
+  // ------------------------------
+  // Färg-anpassningar
+  // ------------------------------
+
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#252526",
+    "statusBar.noFolderBackground": "#252526",
+    "statusBar.debuggingBackground": "#252526",
+    "sideBar.background": "#252526"
+  },
+
+  // ------------------------------
+  // Vim-inställningar
+  // ------------------------------
+
+  "editor.lineNumbers": "relative", // Visa relativa radnummer
+  "vim.autoindent": true, // Automatisk indentering i Vim-läget
+  "vim.leader": "<Space>", // Space-tangenten används som "leader key"
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Buffers: bläddra mellan öppna filer
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // Splits: dela editorfönstret
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // Snabbt hitta filer
+    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+
+    // Navigera mellan splits
+    { "before": ["leader", "h"], "commands": ["workbench.action.focusLeftGroup"] },
+    { "before": ["leader", "j"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["leader", "k"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["leader", "l"], "commands": ["workbench.action.focusRightGroup"] }
+  ],
+
+  "vim.insertModeKeyBindings": [
+    // Flytta markören med Ctrl + h/j/k/l i insert mode
+    { "before": ["<C-h>"], "after": ["<left>"] },
+    { "before": ["<C-j>"], "after": ["<down>"] },
+    { "before": ["<C-k>"], "after": ["<up>"] },
+    { "before": ["<C-l>"], "after": ["<right>"] },
+
+    // jk för att lämna insert mode (ny)
+    { "before": ["j", "k"], "after": ["<Esc>"] }
+  ],
+
+  // Kommentera kod i visual mode
+  "vim.visualModeKeyBindings": [
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+
+  // ------------------------------
+  // Formatter / Python
+  // ------------------------------
+
+  "python.defaultInterpreterPath": "c:\\Users\\elias\\AppData\\Local\\Microsoft\\WindowsApps\\python3.10.exe",
+
+  // ------------------------------
+  // UI-anpassningar
+  // ------------------------------
+
+  "editor.minimap.enabled": false, // Dölj minikarta
+  "breadcrumbs.enabled": false, // Dölj breadcrumbs
+  "workbench.activityBar.location": "hidden", // Dölj sidans aktivitetsfält
+  "window.menuBarVisibility": "compact", // Kompakt menyrad
+  "workbench.secondarySideBar.defaultVisibility": "visible" // Visa sekundära sidopanelen
+}

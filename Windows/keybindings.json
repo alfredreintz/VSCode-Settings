@@ -1,0 +1,115 @@
+// Place your key bindings in this file to override the defaults
+[
+  // Kör Python-kod i terminalen med Ctrl+Enter
+  {
+    "key": "ctrl+enter",
+    "command": "python.execInTerminal"
+  },
+
+  // ------------------------------
+  // TAB för att bläddra mellan autocompletion-förslag
+  // ------------------------------
+
+  // Tar bort standardbeteendet där Tab accepterar valt förslag
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  // Gör så att Tab istället hoppar till nästa förslag
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !inSnippetMode"
+  },
+  // Shift+Tab hoppar till föregående förslag
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !inSnippetMode"
+  },
+
+  // ------------------------------
+  // Terminal-kommandon
+  // ------------------------------
+
+  // Byt fokus till nästa terminal
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  // Byt fokus till föregående terminal
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  // Öppna/stäng panelen (terminal/utdata/debugg-konsol)
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.togglePanel"
+  },
+  // Skapa en ny terminal
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  // Stäng (döda) den aktiva terminalen
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+
+  // ------------------------------
+  // Filhantering i Explorer
+  // ------------------------------
+
+  // Ctrl+E visar/gömmer sidopanelen
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  // Ctrl+E fokuserar filutforskaren om man står i editorn
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  // N skapar en ny fil (i Explorer, om inget inputfält är aktivt)
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // R byter namn på markerad fil
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // Shift+N skapar en ny mapp
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  // D raderar markerad fil
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  // ------------------------------
+  // Emmet (HTML/XML taggar)
+  // ------------------------------
+
+  // Ctrl+Shift+5 markerar motsvarande öppnings-/stängningstag
+  {
+    "key": "ctrl+shift+5",
+    "command": "editor.emmet.action.matchTag"
+  }
+]
